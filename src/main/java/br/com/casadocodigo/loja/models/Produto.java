@@ -1,10 +1,19 @@
 package br.com.casadocodigo.loja.models;
 
+
+import java.util.List;
+
+import javax.persistence.Entity;
+
+@Entity
 public class Produto {
 
+	private int id;
+	
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	private List <Preco> precos;
 	
 	
 	public String getTitulo() {
@@ -24,7 +33,22 @@ public class Produto {
 	}
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
+	}	
+	
+	public int getId() {
+		return id;
 	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public List<Preco> getPrecos() {
+		return precos;
+	}
+	public void setPrecos(List<Preco> precos) {
+		this.precos = precos;
+	}
+	
+	
 	
 	@Override
 	public String toString() {
