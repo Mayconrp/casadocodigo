@@ -2,6 +2,9 @@ package br.com.casadocodigo.loja.models;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Preco {
 
 		
@@ -22,6 +25,4 @@ public class Preco {
 		this.tipo = tipo;
 	}
 	
-	
-	
-}
+	}

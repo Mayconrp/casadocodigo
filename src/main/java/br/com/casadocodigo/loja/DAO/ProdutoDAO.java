@@ -4,11 +4,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.casadocodigo.loja.models.Produto;
 
-	@Repository
-	public class ProdutoDAO {
+@Repository
+@Transactional
+public class ProdutoDAO {
 	
 	
 	@PersistenceContext
@@ -17,7 +19,5 @@ import br.com.casadocodigo.loja.models.Produto;
 	public void gravar(Produto produto) {
 		manager.persist(produto);
 	
-		
-		
 	}
 }
