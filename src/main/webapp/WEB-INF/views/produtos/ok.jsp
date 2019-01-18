@@ -10,5 +10,8 @@
 
 		<h1>Produto cadastrado com sucesso!</h1>
 
+				
+				<a href="http://localhost:8080/casadocodigo/produtos"><button>Listar Produtos</button></a>
+
 </body>
 </html>

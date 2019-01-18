@@ -36,6 +36,8 @@
 			
 			<button type="submit">Cadastrar</button>
 		</form>
-
+				
+				<br><a href="http://localhost:8080/casadocodigo/produtos"><button>Listar Produtos</button></a>
+				
 </body>
 </html>
