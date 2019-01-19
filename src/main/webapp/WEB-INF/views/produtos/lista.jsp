@@ -12,6 +12,10 @@
 <body> 
 
 	<h1>Lista de Produtos</h1>
+	
+	<div><h2>${sucesso}</h2></div>	
+		<br>
+	
 		<table>
 				<tr>
 					<td>Título</td>
@@ -27,7 +31,7 @@
 			</c:forEach>
 		</table>
 		<br>
-		<a href="http://localhost:8080/casadocodigo/produtos/form"><button>Formulário</button></a>
+		
 		
 		
 		
