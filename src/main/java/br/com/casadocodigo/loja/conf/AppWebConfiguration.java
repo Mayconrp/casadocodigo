@@ -24,16 +24,15 @@ public class AppWebConfiguration {
 		return resolver;
 	}
 	
-	public MessageSource messageSource () {
-		
-		ReloadableResourceBundleMessageSource messageSource 
-		   = new ReloadableResourceBundleMessageSource();
-		
-		messageSource.setBasename("/WEB-INF/messages");
-		messageSource.setDefaultEncoding("UTF-8");
-		messageSource.setCacheSeconds(1);
-		
-		return messageSource;
-	}
+	@Bean
+	// para ser gerenciado pelo spring deve ter o mapping @Bean
+	// configuração de mensagens
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("/WEB-INF/messages");
+        messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setCacheSeconds(1);
+        return messageSource;
+    }
 	
 }

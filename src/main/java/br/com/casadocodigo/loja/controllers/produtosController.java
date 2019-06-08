@@ -20,6 +20,8 @@ import br.com.casadocodigo.loja.models.TipoPreco;
 import br.com.casadocodigo.loja.validation.produtosValidation;
 
 @Controller
+// todos os metodos vão saber que é de produtos por conta do requestMapping na classe
+@RequestMapping("produtos")
 public class produtosController {
 	
 	@Autowired
@@ -31,7 +33,7 @@ public class produtosController {
 	}
 	
 	
-	@RequestMapping("/produtos/form")
+	@RequestMapping("/form")
 	public ModelAndView form() {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");
 		modelAndView.addObject("tipos", TipoPreco.values());
@@ -39,7 +41,7 @@ public class produtosController {
 		return modelAndView;
 	}
 		
-	@RequestMapping(value="/produtos", method= RequestMethod.POST)
+	@RequestMapping(method= RequestMethod.POST)
 	// pegando os parametros do form.jsp
 	public ModelAndView gravar(@Valid Produto produto , BindingResult result , RedirectAttributes redirectAttributes) {
 		
@@ -57,7 +59,7 @@ public class produtosController {
 				
 	}
 	
-	@RequestMapping(value="/produtos" , method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listar() {
 		List <Produto> produtos = produtoDao.listar();
 		
