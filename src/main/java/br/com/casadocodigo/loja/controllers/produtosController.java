@@ -46,6 +46,8 @@ public class produtosController {
 	// pegando os parametros do form.jsp
 	public ModelAndView gravar( MultipartFile sumario ,  @Valid Produto produto , BindingResult result , RedirectAttributes redirectAttributes) {
 		
+		System.out.println(sumario.getOriginalFilename());
+		
 		if(result.hasErrors()) {
 			return form(produto);
 		}

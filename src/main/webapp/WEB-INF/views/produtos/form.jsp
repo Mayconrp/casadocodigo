@@ -9,7 +9,7 @@
 <title>Casa do código </title>
 </head>
 <body>
-		<form:form action="/casadocodigo/produtos" method="POST" commandName="produto">		
+		<form:form action="/casadocodigo/produtos" method="POST" commandName="produto" enctype="multipart/form-data">		
 			<div>
 				<label>Título</label>
 				<form:input path="titulo"/>							
