@@ -3,6 +3,8 @@
     
     <!-- importação do jstl -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +26,12 @@
 				</tr>
 			<c:forEach items="${produtos}" var="produto">						
 				<tr>
-					<td>${produto.titulo}</td>
-					<td>${produto.descricao}</td>
+					<td>					
+						<a href="/casadocodigo/produtos/detalhe?id=${produto.id}">${produto.titulo}</a> 
+					</td>
+					<td>
+					<a href="/casadocodigo/produtos/detalhe?id=${produto.id}">${produto.descricao}</a> 
+					</td>
 					<td>${produto.paginas}</td>
 				</tr>
 			</c:forEach>

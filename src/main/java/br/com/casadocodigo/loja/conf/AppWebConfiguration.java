@@ -4,7 +4,6 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
@@ -16,9 +15,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.casadocodigo.loja.DAO.ProdutoDAO;
 import br.com.casadocodigo.loja.controllers.HomeController;
+import br.com.casadocodigo.loja.infra.FileSaver;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class })
+@ComponentScan(basePackageClasses = {HomeController.class, ProdutoDAO.class, FileSaver.class})
 public class AppWebConfiguration {
 
 	// medoto mapear e retornar a view

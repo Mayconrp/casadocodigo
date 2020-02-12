@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.casadocodigo.loja.DAO.ProdutoDAO;
+import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.models.Produto;
 import br.com.casadocodigo.loja.models.TipoPreco;
 import br.com.casadocodigo.loja.validation.produtosValidation;
@@ -27,6 +28,9 @@ public class produtosController {
 	
 	@Autowired
 	private ProdutoDAO produtoDao;
+	
+	@Autowired
+	private FileSaver fileSaver;
 	
 	@InitBinder
 	public void InitBinder(WebDataBinder binder) {
@@ -46,12 +50,12 @@ public class produtosController {
 	// pegando os parametros do form.jsp
 	public ModelAndView gravar( MultipartFile sumario ,  @Valid Produto produto , BindingResult result , RedirectAttributes redirectAttributes) {
 		
-		System.out.println(sumario.getOriginalFilename());
-		
 		if(result.hasErrors()) {
 			return form(produto);
 		}
 		
+		String path = fileSaver.write("arquivos", sumario);
+		produto.setSumarioPath(path);
 		produtoDao.gravar(produto);
 		
 		// dando redirect para 302 para não enviar novos dados ao banco
@@ -72,6 +76,13 @@ public class produtosController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/detalhe")
+	public ModelAndView detalhe(Integer id) {
+		ModelAndView modelAndView = new ModelAndView("produtos/detalhe");
+		Produto produto = produtoDao.find(id);
+		modelAndView.addObject("produto" , produto);
+		return modelAndView;
+	}
 }
 
 
