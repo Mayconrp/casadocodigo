@@ -1,19 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title> Casa do código </title>
+<title> Casa do cï¿½digo </title>
 </head>
 <body>
 
-		<h1>Casa do código</h1>
+		<h1>Casa do cï¿½digo</h1>
 		
 		<table>
 			<tr>
 				<td>Java 8</td>
-				<td>Certificação OCJP</td>
+				<td>Certificaï¿½ï¿½o OCJP</td>
 			</tr>
 			
 			<tr>
